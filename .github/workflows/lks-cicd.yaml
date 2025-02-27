@@ -7,7 +7,7 @@ on:
 
 jobs:
   install:
-    name: Install Dependencies And Set Up
+    name: Install Dependencies And SetUp
     runs-on: ubuntu-latest
 
     steps:
