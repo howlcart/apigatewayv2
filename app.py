@@ -52,7 +52,7 @@ def add_user():
         image_filename = f"users/{image.filename}"
         try:
             s3_client.upload_fileobj(image, S3_BUCKET, image_filename)
-            image_url = f"https://{S3_BUCKET}.s3-{AWS_REGION}.amazonaws.com/{image_filename}"
+            image_url = f"https://{S3_BUCKET}.s3.{AWS_REGION}.amazonaws.com/{image_filename}"
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 
@@ -97,7 +97,7 @@ def update_user(user_id):
     response = requests.put(f"{API_URL}/{user_id}", json=data)
 
     if response.status_code == 200:
-        return jsonify({"message": "Used sudah diupdate", "data": response.json()})
+        return jsonify({"message": "User sudah diupdate", "data": response.json()})
     else:
         return jsonify({"error": "Failed to update user"}), response.status_code
 

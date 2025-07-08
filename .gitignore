@@ -3,10 +3,10 @@ LICENSE
 .env
 .env.*
 
-app.py_
+deploy.yml
 
-
-
+python.zip
+Dockerrun.aws.json
 modul2.yaml
 
 LICENSE
